@@ -1,0 +1,19 @@
+meta {
+  name: Verification Transaction History
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{adminapi-test}}/patsanstha/verification-transaction-history
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3BhdHNhbnN0aGFhZG1pbi5uZW9zYW8uY28uaW4vYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzUxMDIzMzIzLCJleHAiOjE3NTE2MjgxMjMsIm5iZiI6MTc1MTAyMzMyMywianRpIjoiVXowNWo3SVhCU2pZVHV5OCIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.pEkORPhflt-2Rm5HqLjDKgXXC1TyrffZ1YRe_SNu6Fk
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,121 @@
+meta {
+  name: EDIT
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{adminapi-test}}/contacts/13
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "name": "Test Name",
+      "phone": "9876543210", // Same as another contact
+      "type": "test"
+  }
+}
+
+script:post-response {
+  // 1. Successful Contact Update
+  // {
+  //     "name": "Updated Name",
+  //     "phone": "9876543210",
+  //     "type": "updated_type"
+  // }
+  
+  // // pm.test("Status code is 200 for successful update", function() {
+  // //     pm.response.to.have.status(200);
+  // });
+  
+  // // pm.test("Response contains success message and updated contact", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response).to.have.property('message').that.includes("Contact updated successfully."); // Replace with actual translation
+  // //     pm.expect(response).to.have.property('data');
+  // //     pm.expect(response.data.contact.name).to.eql("Updated Name");
+  // //     pm.expect(response.data.contact.phone).to.eql("9876543450");
+  // //     pm.expect(response.data.contact.type).to.eql("updated_type");
+  // });
+  
+  // // pm.test("Response has correct structure", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response).to.have.property('status', 200);
+  // //     pm.expect(response).to.have.property('data').that.has.property('contact');
+  // });
+  
+  
+  // 2. Validation Errors
+  // a) Missing Required Fields
+  // {}
+  // // pm.test("Status code is 422 for validation errors", function() {
+  // //     pm.response.to.have.status(422);
+  // });
+  
+  // // pm.test("Returns validation error for missing fields", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response.message).to.include("Name is required."); // Replace with actual translation
+  // });
+  
+  // b) Invalid Phone Format
+  // {
+  //     "name": "Test Name",
+  //     "phone": "12345",
+  //     "type": "test"
+  // }
+  // // pm.test("Returns phone format error", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response.message).to.include("Phone number must be exactly 10 digits."); // Replace with actual translation
+  // });
+  
+  // c) Duplicate Phone Number
+  // {
+  //     "name": "Test Name",
+  //     "phone": "9876543210", // Same as another contact
+  //     "type": "test"
+  // }
+  // // pm.test("Returns phone uniqueness error", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response.message).to.include("Phone number is already taken"); // Replace with actual translation
+  // });
+  
+  // 3. Contact Not Found
+  // {{base_url}}/api/contacts/999999
+  // // pm.test("Status code is 404 for non-existent contact", function() {
+  // //     pm.response.to.have.status(404);
+  // });
+  
+  // // pm.test("Returns not found message", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response.message).to.include("Contact not found"); // Replace with actual translation
+  // });
+  
+  // 4. Deleted Contact
+  // Create a contact, then set its is_delete to 1
+  
+  // Use that ID for this test
+  
+  // // pm.test("Status code is 404 for deleted contact", function() {
+  // //     pm.response.to.have.status(404);
+  // });
+  
+  // 5. Invalid ID Format
+  // {{base_url}}/api/contacts/abc
+  // // pm.test("Status code is 500 for invalid ID format", function() {
+  // //     pm.response.to.have.status(500); // Assuming integerParamsOnly returns 400
+  // });
+  
+  // // pm.test("Returns invalid ID message", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response.error).to.include("Invalid Contact Id"); // Replace with actual translation
+  // });
+}
+
+settings {
+  encodeUrl: true
+}

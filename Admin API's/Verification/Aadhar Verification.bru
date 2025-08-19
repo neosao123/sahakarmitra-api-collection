@@ -1,0 +1,25 @@
+meta {
+  name: Aadhar Verification
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{adminapi-test}}/verification/aadhar?status=success&unifiedTransactionId=e93b9d0e-0e7b-4035-906b-e20536676123&message=Transaction%20successful
+  body: none
+  auth: bearer
+}
+
+params:query {
+  status: success
+  unifiedTransactionId: e93b9d0e-0e7b-4035-906b-e20536676123
+  message: Transaction%20successful
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3BhdHNhbnN0aGFhZG1pbi5uZW9zYW8uY28uaW4vYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzUwOTQxODIwLCJleHAiOjE3NTA5NDU0MjAsIm5iZiI6MTc1MDk0MTgyMCwianRpIjoia05PY1FGOXJXclRuMjRoeiIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.mOkBVL2zpdzuXI9S-0d2bNUVhF73LrkhqKYq39S1V9g
+}
+
+settings {
+  encodeUrl: true
+}

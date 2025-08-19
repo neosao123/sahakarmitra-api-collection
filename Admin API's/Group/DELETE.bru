@@ -1,0 +1,19 @@
+meta {
+  name: DELETE
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{adminapi-test}}/groups/1
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3BhdHNhbnN0aGFhZG1pbi5uZW9zYW8uY28uaW4vYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzUxMDA5NTg5LCJleHAiOjE3NTEwMTMxODksIm5iZiI6MTc1MTAwOTU4OSwianRpIjoic05jS0NPTTZOMTlOd3FxcCIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.MHjFOwDuMbKPg0jnHKYgPPKYPyD70wV0XFRmsyNyN-4
+}
+
+settings {
+  encodeUrl: true
+}

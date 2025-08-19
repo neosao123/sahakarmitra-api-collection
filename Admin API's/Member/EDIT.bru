@@ -1,0 +1,33 @@
+meta {
+  name: EDIT
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{adminapi-test}}/members/22
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "member_id": "UNION16001004555",
+      "name": "Vishal",
+      "phone": 9000000016,
+      "alternate_phone": 9000000017,
+      "email": "vishal123@gmail.com",
+      "account": 160010004516,
+      "aadhar": "123423453458",
+      "pan": "ABCDM4052P",
+      "dob": "01-07-2025" 
+  }
+}
+
+settings {
+  encodeUrl: true
+}

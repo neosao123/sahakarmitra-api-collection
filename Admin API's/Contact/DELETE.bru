@@ -1,0 +1,64 @@
+meta {
+  name: DELETE
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{adminapi-test}}/contacts/14
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:post-response {
+  // 1. Successful Contact Deletion
+  // Create a contact first or use an existing valid ID
+  // Set contact_id environment variable to a valid, non-deleted contact ID
+  
+  // // pm.test("Status code is 200 for successful deletion", function() {
+  // //     pm.response.to.have.status(200);
+  // });
+  
+  // // pm.test("Response contains success message", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response.message).to.include("Contact deleted successfully"); // Replace with actual translation
+  // //     pm.expect(response).to.have.property('status', 200);
+  // });
+  
+  // 2. Contact Not Found
+  // {{base_url}}/api/contacts/999999 (non-existent ID)
+  // // pm.test("Status code is 404 for non-existent contact", function() {
+  // //     pm.response.to.have.status(404);
+  // });
+  
+  // // pm.test("Returns not found message", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response.message).to.include("Contact not found"); // Replace with actual translation
+  // });
+  
+  // 3. Already Deleted Contact
+  // // pm.test("Status code is 404 for already deleted contact", function() {
+  // //     pm.response.to.have.status(404);
+  // });
+  
+  // 4. Invalid ID Format
+  // {{base_url}}/api/contacts/abc (non-numeric ID)
+  // // pm.test("Status code is 500 for invalid ID format", function() {
+  // //     pm.response.to.have.status(500); // Assuming the framework throws an exception
+  // });
+  
+  // // pm.test("Returns error message for invalid ID", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response.message).to.include("An error occurred. Please try again"); 
+  // //     pm.expect(response).to.have.property('error');
+  // });
+  
+}
+
+settings {
+  encodeUrl: true
+}

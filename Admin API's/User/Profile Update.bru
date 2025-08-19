@@ -1,0 +1,26 @@
+meta {
+  name: Profile Update
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{adminapi-test}}/profile/update/3
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3BhdHNhbnN0aGFhZG1pbi5uZW9zYW8uY28uaW4vYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzUxMDIzMzIzLCJleHAiOjE3NTE2MjgxMjMsIm5iZiI6MTc1MTAyMzMyMywianRpIjoiVXowNWo3SVhCU2pZVHV5OCIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.pEkORPhflt-2Rm5HqLjDKgXXC1TyrffZ1YRe_SNu6Fk
+}
+
+body:multipart-form {
+  name: Alex
+  email: alex@gmail.com
+  phone: 9000000005
+  avatar: @file()
+}
+
+settings {
+  encodeUrl: true
+}

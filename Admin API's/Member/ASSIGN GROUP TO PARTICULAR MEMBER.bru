@@ -1,0 +1,27 @@
+meta {
+  name: ASSIGN GROUP TO PARTICULAR MEMBER
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{adminapi-test}}/members/assign-group
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "member_id": 62,
+      "group_id": 5,
+      "action": "assign" // remove or assign
+  }
+}
+
+settings {
+  encodeUrl: true
+}

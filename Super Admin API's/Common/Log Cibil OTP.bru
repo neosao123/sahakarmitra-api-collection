@@ -1,0 +1,23 @@
+meta {
+  name: Log Cibil OTP
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{superadminapi-test}}/cibil/log-otp?patsanstha_id=1eaf8409-b3aa-4128-b150-c7ae63b3a2f1&mobile_number=8983185204&first_name=ABHISHEK&last_name=HARSHE&otp=6789
+  body: none
+  auth: none
+}
+
+params:query {
+  patsanstha_id: 1eaf8409-b3aa-4128-b150-c7ae63b3a2f1
+  mobile_number: 8983185204
+  first_name: ABHISHEK
+  last_name: HARSHE
+  otp: 6789
+}
+
+settings {
+  encodeUrl: true
+}

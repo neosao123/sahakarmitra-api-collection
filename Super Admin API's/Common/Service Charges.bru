@@ -1,0 +1,22 @@
+meta {
+  name: Service Charges
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{superadminapi-test}}/service-charges
+  body: text
+  auth: none
+}
+
+body:text {
+  {
+      "phone": 9000000005,
+      "password": "123456"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

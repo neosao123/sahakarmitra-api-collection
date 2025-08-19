@@ -1,0 +1,42 @@
+meta {
+  name: CREATE
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{adminapi-test}}/loan
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "member_id": 26,
+      "member_name": "Shreyas",
+      "member_phone": "9000000018",
+      "aadhar": "123423453459",
+      "pan": "ABCDM4052M",
+      "loan_type": 1,
+      "loan_amount": 97000,
+      "loan_provided_date": "10-02-2025",
+      "duration_in_month": 1,
+      "day": 20,
+      "refund_type": "monthly",
+      "loan_account_number": "160010005707",
+      "loan_status": "initial"
+  }
+}
+
+script:post-response {
+  
+  
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,83 @@
+meta {
+  name: LIST
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{adminapi-test}}/loan?search=&limit=10&page=1
+  body: none
+  auth: bearer
+}
+
+params:query {
+  search: 
+  limit: 10
+  page: 1
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:post-response {
+  test("Response status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  
+  test("Response has required fields in the data object", function () {
+      const responseData = res.getBody();
+  
+      expect(responseData).to.be.an('object');
+      expect(responseData.data).to.exist.and.to.be.an('object');
+      expect(responseData.data.loans).to.exist.and.to.be.an('array');
+  
+      responseData.data.loans.forEach(loan => {
+          expect(loan).to.be.an('object');
+          expect(loan).to.have.all.keys('id', 'patsanstha_id', 'member_id', 'member_name', 'member_phone', 'aadhar', 'pan', 'loan_type', 'loan_amount', 'loan_provided_date', 'duration_in_month', 'refund_type', 'loan_account_number', 'loan_status', 'created_at', 'updated_at', 'patsanstha_code', 'day', 'patsanstha_loan_id', 'loan_type_marathi', 'loan_type_english');
+      });
+  });
+  
+  
+  test("Loans array contains objects with expected properties", function () {
+      const responseData = res.getBody();
+      
+      expect(responseData).to.be.an('object');
+      expect(responseData.data).to.have.property('loans').that.is.an('array');
+  
+      responseData.data.loans.forEach(function(loan) {
+          expect(loan).to.be.an('object');
+          expect(loan).to.have.all.keys('id', 'patsanstha_id', 'member_id', 'member_name', 'member_phone', 'aadhar', 'pan', 'loan_type', 'loan_amount', 'loan_provided_date', 'duration_in_month', 'refund_type', 'loan_account_number', 'loan_status', 'created_at', 'updated_at', 'patsanstha_code', 'day', 'patsanstha_loan_id', 'loan_type_marathi', 'loan_type_english');
+      });
+  });
+  
+  test("Pagination contains valid numeric values", function () {
+      const responseData = res.getBody();
+      expect(responseData).to.be.an('object');
+      expect(responseData).to.have.property('pagination');
+  
+      const pagination = responseData.pagination;
+  
+      expect(pagination.total).to.be.a('number');
+      expect(pagination.last_page).to.be.a('number');
+  
+      // Allow number or null for per_page
+      expect(
+          (typeof pagination.per_page === 'number') || pagination.per_page === null,
+          "per_page should be number or null"
+      ).to.be.true;
+  
+      // Allow number or null for current_page
+      expect(
+          (typeof pagination.current_page === 'number') || pagination.current_page === null,
+          "current_page should be number or null"
+      ).to.be.true;
+  });
+  
+  
+}
+
+settings {
+  encodeUrl: true
+}

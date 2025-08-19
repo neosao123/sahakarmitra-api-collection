@@ -1,0 +1,114 @@
+meta {
+  name: CREATE
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{adminapi-test}}/contacts
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "name": "Virat",
+      "phone": "9876543255",
+      "type": "customer"
+  }
+}
+
+script:post-response {
+  //  1. Successful Contact Creation
+  // {
+  //     "name": "John Doe",
+  //     "phone": "1234567890",
+  //     "type": "customer"
+  // }
+  
+  // // pm.test("Status code is 200", function() {
+  // //     pm.response.to.have.status(200);
+  // });
+  
+  // // pm.test("Success message is returned", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response.message).to.eql("Contact created successfully"); // Replace with your actual translation
+  // });
+  
+  // // pm.test("Response has correct structure", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response).to.have.property('message');
+  // //     pm.expect(response).to.have.property('status');
+  // });
+  
+  
+  // 2. Missing Required Fields
+  // {}
+  // // pm.test("Status code is 422", function() {
+  // //     pm.response.to.have.status(422);
+  // });
+  
+  // // pm.test("Returns validation error for missing fields", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response.message).to.include("Name is required");
+  //     // Add similar checks for phone and type if needed
+  // });
+  
+  // 3. Invalid Phone Format
+  // {
+  //     "name": "John Doe",
+  //     "phone": "12345",
+  //     "type": "customer"
+  // }
+  // // pm.test("Status code is 422 for invalid phone", function() {
+  // //     pm.response.to.have.status(422);
+  // });
+  
+  // // pm.test("Returns phone format error", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response.message).to.include("Phone number must be exactly 10 digits");
+  // });
+  
+  
+  // 4. Duplicate Phone Number
+  // {
+  //     "name": "John Doe",
+  //     "phone": "1234567890", // Same as first test
+  //     "type": "customer"
+  // }
+  // // pm.test("Status code is 422 for duplicate phone", function() {
+  // //     pm.response.to.have.status(422);
+  // });
+  
+  // // pm.test("Returns phone uniqueness error", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response.message).to.include("Phone number is already taken.");
+  // });
+  
+  // 5. Name Too Long
+  // {
+  //     "name": "This is a very long name that exceeds the maximum allowed characters of 255 which should trigger a validation error when the system tries to process it because the field has a max length constraint defined in the API rules. The name field allow only 255 char",
+  //     "phone": "9876543255",
+  //     "type": "customer"
+  // }
+  
+  // // pm.test("Status code is 422 for long name", function() {
+  // //     pm.response.to.have.status(422);
+  // });
+  
+  // // pm.test("Returns name length error", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response.message).to.include("Name may not be greater than 255 characters.");
+  // });
+  
+  
+  
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,29 @@
+meta {
+  name: CREATE
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{adminapi-test}}/loan-payment
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "loan_id": 16,
+    "loan_refund_date": "05-07-2025",
+    "paid_amount": 3200,
+    "remaining_amount": "12000"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+}

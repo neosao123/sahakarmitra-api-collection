@@ -1,0 +1,19 @@
+meta {
+  name: PAN Verification
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{adminapi-test}}/verification/pan/FNFPM3962N
+  body: text
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3BhdHNhbnN0aGFhZG1pbi5uZW9zYW8uY28uaW4vYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzUxMDI0MzA3LCJleHAiOjE3NTM2MTYzMDcsIm5iZiI6MTc1MTAyNDMwNywianRpIjoieDlJbzJER0ptbjJCRXloWCIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.sdUkgFUIvU93VRok9m0yB0Ms04G3V0a1zvaBjExmUxk
+}
+
+settings {
+  encodeUrl: true
+}

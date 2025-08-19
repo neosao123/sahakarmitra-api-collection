@@ -1,0 +1,87 @@
+meta {
+  name: VIEW DETAILS
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{adminapi-test}}/contacts/1
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:post-response {
+  // 1. Successful Contact Retrieva
+  // // pm.test("Status code is 200 for successful retrieval", function () {
+  // //     pm.response.to.have.status(200);
+  // });
+  
+  // // pm.test("Response contains contact data", function () {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response).to.have.property('data');
+  // //     pm.expect(response.data).to.have.property('contact');
+  // //     pm.expect(response.data.contact).to.have.property('id');
+  // //     pm.expect(response.data.contact).to.have.property('name');
+  // //     pm.expect(response.data.contact).to.have.property('phone');
+  // //     pm.expect(response.data.contact).to.have.property('type');
+  // //     pm.expect(response.data.contact.is_delete).to.eql(0);
+  // });
+  
+  // // pm.test("Response has correct structure", function () {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response).to.have.property('status', 200);
+  // //     pm.expect(response).to.have.property('data');
+  // });
+  
+  // 2. Contact Not Found
+  
+  // Use an invalid ID or an ID that doesn't exist
+  // Or use an ID that has is_delete = 1
+  
+  // // pm.test("Status code is 404 for non-existent contact", function() {
+  // //     pm.response.to.have.status(404);
+  // });
+  
+  // // pm.test("Returns not found message", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response.message).to.include("Contact not found"); // Replace with your actual translation
+  // //     pm.expect(response).to.have.property('status', 404);
+  // });
+  
+  // 3. Deleted Contact
+  
+  // Create a contact, then set its is_delete to 1
+  // Use that ID for this test
+  
+  // // pm.test("Status code is 404 for deleted contact", function() {
+  // //     pm.response.to.have.status(404);
+  // });
+  
+  // // pm.test("Returns not found message for deleted contact", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response.message).to.include("Contact not found");
+  // });
+  
+  // 4. Invalid ID Format
+  
+  // {{base_url}}/api/contacts/abc (non-numeric ID)
+  
+  // // pm.test("Status code is 500 for invalid ID format", function() {
+  // //     pm.response.to.have.status(500); // Or 400 if you handle this case differently
+  // });
+  
+  // // pm.test("Returns error message for invalid ID", function() {
+  // //     const response = pm.response.json();
+  // //     pm.expect(response.message).to.include("Something went wrong"); // Replace with your actual exception message
+  // //     pm.expect(response).to.have.property('error');
+  // });
+  
+}
+
+settings {
+  encodeUrl: true
+}

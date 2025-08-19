@@ -1,0 +1,52 @@
+meta {
+  name: VIEW DETAILS
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{adminapi-test}}/members/62
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:post-response {
+  // Check status code
+  test("Status code is 200", function() {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  // Check response structure
+  test("Response has correct structure", function() {
+      const response = res.getBody();
+      expect(response).to.have.property('status');
+      expect(response).to.have.property('message');
+      expect(response).to.have.property('data');
+      expect(response.data).to.have.property('member');
+  });
+  
+  // Check member data exists
+  test("Member data exists", function() {
+      const member = res.getBody().data.member;
+      expect(member).to.be.an('object');
+      expect(member).to.have.property('id');
+      expect(member).to.have.property('groups');
+  });
+  
+  // Check date format conversion
+  test("DOB is formatted correctly", function() {
+      const member = res.getBody().data.member;
+      if (member.dob) {
+          expect(member.dob).to.match(/^\d{2}-\d{2}-\d{4}$/);
+      }
+  });
+  
+}
+
+settings {
+  encodeUrl: true
+}

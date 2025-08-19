@@ -1,0 +1,19 @@
+meta {
+  name: LOAN TYPE
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{adminapi-test}}/loan/loan-type
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,25 @@
+meta {
+  name: LIST
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{adminapi-test}}/loan-payment?loan_id=16&limit=10&page=1
+  body: none
+  auth: bearer
+}
+
+params:query {
+  loan_id: 16
+  limit: 10
+  page: 1
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

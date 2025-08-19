@@ -1,0 +1,26 @@
+meta {
+  name: EDIT
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{adminapi-test}}/groups/16
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3BhdHNhbnN0aGFhZG1pbi5uZW9zYW8uY28uaW4vYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzUxNzExNTA0LCJleHAiOjE3NTQzMDM1MDQsIm5iZiI6MTc1MTcxMTUwNCwianRpIjoiM3hVN3JTdFJ0Q1hvODFFcCIsInN1YiI6IjciLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.b_Tz57V-VIFdb-nXPVXmule9m3CnQWPvHAPjbd1stoU
+}
+
+body:json {
+  {
+    "title": "Current Account New",
+    "description": "For businesses & professionals"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

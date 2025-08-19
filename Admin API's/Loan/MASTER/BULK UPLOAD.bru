@@ -1,0 +1,24 @@
+meta {
+  name: BULK UPLOAD
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{adminapi-test}}/loan/import
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  file: @file(/C:/Users/web/Downloads/loan_import_template (7).xlsx)
+  patsanstha_id: 1eaf8409-b3aa-4128-b150-c7ae63b3a2f1
+}
+
+settings {
+  encodeUrl: true
+}

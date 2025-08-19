@@ -1,0 +1,36 @@
+meta {
+  name: CREATE
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{adminapi-test}}/members
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "member_id": "UNION160010045",
+      "name": "Neosao",
+      "phone": 9000000016,
+      "alternate_phone": 9000000017,
+      "email": "neosao@gmail.com",
+      "account": "160010004556",
+      "aadhar": 123423453467,
+      "pan": "ABCDM4057P",
+      "dob": "01-07-2025",
+      "groups": [
+          4
+      ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

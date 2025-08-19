@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Patsanstha - API",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Profile Details
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{adminapi-test}}/profile/details/8
+  body: json
+  auth: bearer
+}
+
+headers {
+  ~Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

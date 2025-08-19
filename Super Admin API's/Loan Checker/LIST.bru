@@ -1,0 +1,23 @@
+meta {
+  name: LIST
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{superadminapi-test}}/loan/loan-checker?search=9000000018
+  body: json
+  auth: bearer
+}
+
+params:query {
+  search: 9000000018
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

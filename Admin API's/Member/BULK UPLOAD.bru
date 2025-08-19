@@ -1,0 +1,23 @@
+meta {
+  name: BULK UPLOAD
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{adminapi-test}}/members/import
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  file: @file(/C:/Users/web/Downloads/members_import_template (2).csv)
+}
+
+settings {
+  encodeUrl: true
+}

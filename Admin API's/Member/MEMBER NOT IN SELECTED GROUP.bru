@@ -1,0 +1,26 @@
+meta {
+  name: MEMBER NOT IN SELECTED GROUP
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{adminapi-test}}/members/not-in-group?search=&group=&limit=10&page=1
+  body: none
+  auth: bearer
+}
+
+params:query {
+  search: 
+  group: 
+  limit: 10
+  page: 1
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}
