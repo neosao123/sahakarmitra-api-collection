@@ -1,0 +1,27 @@
+meta {
+  name: TOP Create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{adminapi-test}}/topup/create
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  topup_id: 1
+  title: TOP up with 300
+  type: verify
+  price: 200
+  patsanstha_topup_id: 1
+}
+
+settings {
+  encodeUrl: true
+}

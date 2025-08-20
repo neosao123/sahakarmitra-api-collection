@@ -1,0 +1,32 @@
+meta {
+  name: Create
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{superadminapi-test}}/topup/create
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  : 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  patsanstha_id: 1eaf8409-b3aa-4128-b150-c7ae63b3a2f1
+  patsanstha_code: csmpatsansthakop
+  topup_id: 1
+  title: TOP up with 300
+  type: verify
+  price: 200.00
+}
+
+settings {
+  encodeUrl: true
+}
