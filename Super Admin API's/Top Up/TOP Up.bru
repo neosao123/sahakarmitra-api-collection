@@ -5,9 +5,13 @@ meta {
 }
 
 get {
-  url: {{superadminapi-test}}top-up-list
+  url: {{superadminapi-test}}/topup/list
   body: none
-  auth: inherit
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
 }
 
 settings {
