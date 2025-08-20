@@ -5,9 +5,13 @@ meta {
 }
 
 get {
-  url: {{superadminapi-test}}/topup/list
+  url: {{superadminapi-test}}/topup/list?search=verify
   body: none
   auth: bearer
+}
+
+params:query {
+  search: verify
 }
 
 auth:bearer {
