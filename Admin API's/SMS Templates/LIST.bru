@@ -5,9 +5,16 @@ meta {
 }
 
 get {
-  url: {{adminapi-test}}/sms-templates
+  url: {{adminapi-test}}/sms-templates?search&limit=10&page=1&message_mode=single
   body: none
   auth: bearer
+}
+
+params:query {
+  search: 
+  limit: 10
+  page: 1
+  message_mode: single
 }
 
 auth:bearer {
