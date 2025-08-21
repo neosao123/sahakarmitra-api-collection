@@ -5,7 +5,7 @@ meta {
 }
 
 get {
-  url: {{adminapi-test}}/whatsapp-templates?search&limit=10&page=1&message_mode=bulk
+  url: {{adminapi-test}}/whatsapp-templates?search&limit=10&page=1&message_mode
   body: none
   auth: bearer
 }
@@ -14,7 +14,7 @@ params:query {
   search: 
   limit: 10
   page: 1
-  message_mode: bulk
+  message_mode: 
 }
 
 auth:bearer {
