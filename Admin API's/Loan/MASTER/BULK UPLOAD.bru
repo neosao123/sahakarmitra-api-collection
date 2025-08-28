@@ -10,12 +10,16 @@ post {
   auth: bearer
 }
 
+headers {
+  : 
+}
+
 auth:bearer {
   token: {{token}}
 }
 
 body:multipart-form {
-  file: @file(C:\Users\web\Downloads\loan_import_template (24).xlsx)
+  file: @file(C:\Users\web\Downloads\loan_import_template (25).xlsx)
   patsanstha_id: 1eaf8409-b3aa-4128-b150-c7ae63b3a2f1
 }
 

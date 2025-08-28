@@ -5,17 +5,18 @@ meta {
 }
 
 get {
-  url: {{adminapi-test}}/profile/details/8
+  url: {{adminapi-test}}/profile/details/2
   body: json
   auth: bearer
 }
 
 headers {
+  lang: mr
   ~Accept: application/json
 }
 
 auth:bearer {
-  token: {{token}}
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3BhdHNhbnN0aGFhZG1pbi5uZW9zYW8uY28uaW4vYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzU2MzU3NjM0LCJleHAiOjE3NTg5NDk2MzQsIm5iZiI6MTc1NjM1NzYzNCwianRpIjoiSGVCWHBxdVFjQTBqRk5RaSIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.IyElBMgfqPX0kSgYRfaSkDlmAKTFl6f_U7zsLf9o6sE
 }
 
 settings {

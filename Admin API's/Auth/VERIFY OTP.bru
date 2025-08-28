@@ -1,0 +1,22 @@
+meta {
+  name: VERIFY OTP
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{adminapi-test}}/forget-password/verify-otp
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "phone": 9000000002,
+    "otp": 123456
+  }
+}
+
+settings {
+  encodeUrl: true
+}
