@@ -1,0 +1,29 @@
+meta {
+  name: Text SMS (Bulk)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{adminapi-test}}/text-msg/schedule
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "template_id":"2",
+    "recipient":"member",
+    "group_id":"1",
+    "message":"प्रिय Shreyas, आज ११-०२-२०२५ आपल्या कर्ज खात्याच्या हप्त्याची देय तारीख आहे. आपण भरणा केला असल्यास हा संदेश दुर्लक्ष करा, अन्यथा त्वरीत भरणा करा. - NSPAT Sahkarmitra",
+    "msg_count":"3"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
