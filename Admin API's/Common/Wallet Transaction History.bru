@@ -5,13 +5,13 @@ meta {
 }
 
 get {
-  url: {{adminapi-test}}/patsanstha/wallet-transaction-history?wallet_type=debit&service_type=
+  url: {{adminapi-test}}/patsanstha/wallet-transaction-history?wallet_type&service_type
   body: none
   auth: bearer
 }
 
 params:query {
-  wallet_type: debit
+  wallet_type: 
   service_type: 
 }
 
