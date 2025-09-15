@@ -1,0 +1,21 @@
+meta {
+  name: Schedule Sms Details List
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{adminapi-test}}/schedule-sms/details/1?search&limit=10&page
+  body: none
+  auth: inherit
+}
+
+params:query {
+  search: 
+  limit: 10
+  page: 
+}
+
+settings {
+  encodeUrl: true
+}
