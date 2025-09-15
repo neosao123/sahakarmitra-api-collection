@@ -1,11 +1,11 @@
 meta {
-  name: Schedule SMS
+  name: recipient sms
   type: http
   seq: 1
 }
 
 get {
-  url: {{adminapi-test}}/schedule-sms?search&limit=10&page=1
+  url: {{adminapi-test}}/recipient-sms?search&limit=10&page=1
   body: none
   auth: bearer
 }

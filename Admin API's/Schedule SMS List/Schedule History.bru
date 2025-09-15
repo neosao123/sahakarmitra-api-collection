@@ -1,0 +1,21 @@
+meta {
+  name: Schedule History
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{adminapi-test}}/schedule-sms/history?search&limit&page
+  body: none
+  auth: inherit
+}
+
+params:query {
+  search: 
+  limit: 
+  page: 
+}
+
+settings {
+  encodeUrl: true
+}
