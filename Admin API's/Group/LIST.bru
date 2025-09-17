@@ -5,7 +5,7 @@ meta {
 }
 
 get {
-  url: {{adminapi-test}}/groups?search=&limit=10&page=1
+  url: {{adminapi-test}}/groups?search&limit=10&page=1&mode=sms
   body: text
   auth: bearer
 }
@@ -14,6 +14,7 @@ params:query {
   search: 
   limit: 10
   page: 1
+  mode: sms
 }
 
 auth:bearer {
