@@ -5,14 +5,15 @@ meta {
 }
 
 get {
-  url: {{adminapi-test}}/patsanstha/wallet-transaction-history?wallet_type&service_type
+  url: {{adminapi-test}}/patsanstha/wallet-transaction-history?wallet_type=credit&service_type&name_of_service=verify
   body: none
   auth: bearer
 }
 
 params:query {
-  wallet_type: 
+  wallet_type: credit
   service_type: 
+  name_of_service: verify
 }
 
 auth:bearer {
