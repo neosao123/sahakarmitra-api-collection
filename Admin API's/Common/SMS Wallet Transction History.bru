@@ -1,0 +1,29 @@
+meta {
+  name: SMS Wallet Transction History
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{adminapi-test}}/patsanstha/wallet-transaction-history?wallet_type=credit,debit&service_type=sms&mode=topup,direct,bulk,scheduled&limit=10&page=1&name_of_service=sms&type=sms-wallet
+  body: none
+  auth: bearer
+}
+
+params:query {
+  wallet_type: credit,debit
+  service_type: sms
+  mode: topup,direct,bulk,scheduled
+  limit: 10
+  page: 1
+  name_of_service: sms
+  type: sms-wallet
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

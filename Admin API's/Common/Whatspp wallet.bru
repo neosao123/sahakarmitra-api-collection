@@ -1,0 +1,25 @@
+meta {
+  name: Whatspp wallet
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{adminapi-test}}/patsanstha/wallet-transaction-history?wallet_type=credit,debit&service_type=whatsapp&mode=topup,direct,bulk,scheduled&limit=10&page=1&name_of_service=whatsapp&type=whatsapp-wallet
+  body: none
+  auth: inherit
+}
+
+params:query {
+  wallet_type: credit,debit
+  service_type: whatsapp
+  mode: topup,direct,bulk,scheduled
+  limit: 10
+  page: 1
+  name_of_service: whatsapp
+  type: whatsapp-wallet
+}
+
+settings {
+  encodeUrl: true
+}
