@@ -5,7 +5,7 @@ meta {
 }
 
 get {
-  url: {{adminapi-test}}/patsanstha/wallet-transaction-history?wallet_type=credit,debit&service_type=whatsapp&mode=topup,direct,bulk,scheduled&limit=10&page=1&name_of_service=whatsapp&type=whatsapp-wallet
+  url: {{adminapi-test}}/patsanstha/wallet-transaction-history?wallet_type=credit,debit&service_type=whatsapp&limit=10&page=1
   body: none
   auth: inherit
 }
@@ -13,11 +13,8 @@ get {
 params:query {
   wallet_type: credit,debit
   service_type: whatsapp
-  mode: topup,direct,bulk,scheduled
   limit: 10
   page: 1
-  name_of_service: whatsapp
-  type: whatsapp-wallet
 }
 
 settings {

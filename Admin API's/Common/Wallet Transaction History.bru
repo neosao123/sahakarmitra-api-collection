@@ -5,19 +5,16 @@ meta {
 }
 
 get {
-  url: {{adminapi-test}}/patsanstha/wallet-transaction-history?wallet_type=credit,debit&service_type=cbil,pan,aadhar&mode=verify,topup&limit=10&page=1&name_of_service=verify&type=verification-wallet
+  url: {{adminapi-test}}/patsanstha/wallet-transaction-history?service_type=cbil,pan,aadhar,verify&limit=10&page=1&wallet_type=credit,debit
   body: none
   auth: bearer
 }
 
 params:query {
-  wallet_type: credit,debit
-  service_type: cbil,pan,aadhar
-  mode: verify,topup
+  service_type: cbil,pan,aadhar,verify
   limit: 10
   page: 1
-  name_of_service: verify
-  type: verification-wallet
+  wallet_type: credit,debit
 }
 
 auth:bearer {

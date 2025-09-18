@@ -5,7 +5,7 @@ meta {
 }
 
 get {
-  url: {{adminapi-test}}/patsanstha/wallet-transaction-history?wallet_type=credit,debit&service_type=sms&mode=topup,direct,bulk,scheduled&limit=10&page=1&name_of_service=sms&type=sms-wallet
+  url: {{adminapi-test}}/patsanstha/wallet-transaction-history?wallet_type=credit,debit&service_type=sms&limit=10&page=1
   body: none
   auth: bearer
 }
@@ -13,11 +13,8 @@ get {
 params:query {
   wallet_type: credit,debit
   service_type: sms
-  mode: topup,direct,bulk,scheduled
   limit: 10
   page: 1
-  name_of_service: sms
-  type: sms-wallet
 }
 
 auth:bearer {
