@@ -4,10 +4,20 @@ meta {
   seq: 3
 }
 
-get {
+post {
   url: {{superadminapi-test}}/topup/web/create
-  body: none
+  body: multipartForm
   auth: inherit
+}
+
+body:multipart-form {
+  patsanstha_id: 1eaf8409-b3aa-4128-b150-c7ae63b3a2f1
+  patsanstha_code: csmpatsansthakop
+  topup_id: 2
+  title: Top up with 300
+  type: whatsapp
+  price: 200.00
+  quantity: 100
 }
 
 settings {

@@ -7,15 +7,11 @@ meta {
 get {
   url: {{superadminapi-test}}/topup/list?search=sms
   body: none
-  auth: bearer
+  auth: inherit
 }
 
 params:query {
   search: sms
-}
-
-auth:bearer {
-  token: $topup
 }
 
 settings {

@@ -1,0 +1,19 @@
+meta {
+  name: Emi Day
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{adminapi-test}}/loan/emi-days
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

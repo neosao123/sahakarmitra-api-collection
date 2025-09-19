@@ -7,15 +7,11 @@ meta {
 post {
   url: {{superadminapi-test}}/topup/create
   body: multipartForm
-  auth: bearer
+  auth: inherit
 }
 
 headers {
   : 
-}
-
-auth:bearer {
-  token: {{token}}
 }
 
 body:multipart-form {
