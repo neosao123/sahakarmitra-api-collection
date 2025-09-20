@@ -5,16 +5,16 @@ meta {
 }
 
 get {
-  url: {{adminapi-test}}/schedule-sms/history?search&limit&page&type=bulk
+  url: {{adminapi-test}}/schedule-sms/history?search&limit=10&page=1&type
   body: none
   auth: inherit
 }
 
 params:query {
   search: 
-  limit: 
-  page: 
-  type: bulk
+  limit: 10
+  page: 1
+  type: 
 }
 
 settings {
