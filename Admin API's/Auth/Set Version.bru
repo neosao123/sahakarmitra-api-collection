@@ -1,0 +1,22 @@
+meta {
+  name: Set Version
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{adminapi-test}}/version/update?setting_id=1&setting_value=1.0.2&is_update_compulsory=1
+  body: none
+  auth: inherit
+}
+
+params:query {
+  : 
+  setting_id: 1
+  setting_value: 1.0.2
+  is_update_compulsory: 1
+}
+
+settings {
+  encodeUrl: true
+}

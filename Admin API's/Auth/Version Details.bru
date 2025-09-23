@@ -1,0 +1,15 @@
+meta {
+  name: Version Details
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{adminapi-test}}/version
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
