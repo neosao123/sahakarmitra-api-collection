@@ -1,0 +1,19 @@
+meta {
+  name: Maintenance Mode
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{adminapi-test}}/maintenance
+  body: none
+  auth: inherit
+}
+
+headers {
+  lang: en
+}
+
+settings {
+  encodeUrl: true
+}
