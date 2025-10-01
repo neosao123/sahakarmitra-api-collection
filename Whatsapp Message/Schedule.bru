@@ -1,0 +1,31 @@
+meta {
+  name: Schedule
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{adminapi-test}}/whatsapp-msg/schedule
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "template_id":"2",
+    "recipient":"group", //contact or group
+    "group_id":"1",  
+    "params":{
+      "name":"Sneha"
+    },
+    "scheduled_at" :"04-10-2025 10:00 AM"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

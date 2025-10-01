@@ -1,0 +1,30 @@
+meta {
+  name: Bulk
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{adminapi-test}}/whatsapp-msg/schedule
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "template_id":"2",
+    "recipient":"group", //contact or group
+    "group_id":"1",  
+    "params":{
+      "name":"Sneha"
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

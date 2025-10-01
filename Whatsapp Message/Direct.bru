@@ -1,11 +1,11 @@
 meta {
-  name: Text SMS (Bulk)
+  name: Direct
   type: http
   seq: 3
 }
 
 post {
-  url: {{adminapi-test}}/text-msg/schedule
+  url: {{adminapi-test}}/whatsapp-msg/direct
   body: json
   auth: bearer
 }
@@ -17,10 +17,12 @@ auth:bearer {
 body:json {
   {
     "template_id":"2",
-    "recipient":"group",
-    "group_id":"1",
+    "recipient":"member",
+    "recipient_id":"17",
     "message":"प्रिय Shreyas, आज ११-०२-२०२५ आपल्या कर्ज खात्याच्या हप्त्याची देय तारीख आहे. आपण भरणा केला असल्यास हा संदेश दुर्लक्ष करा, अन्यथा त्वरीत भरणा करा. - NSPAT Sahkarmitra",
-    "msg_count":"3"
+    "params":{
+      "name":"Sneha"
+    }
   }
 }
 
