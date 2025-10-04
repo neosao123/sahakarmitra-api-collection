@@ -5,7 +5,7 @@ meta {
 }
 
 post {
-  url: {{adminapi-test}}/login
+  url: {{liveAdmin}}/login
   body: json
   auth: none
 }
@@ -16,7 +16,8 @@ headers {
 
 body:json {
   {
-      "phone": 9767040363,
+      "patsanstha_code": "mona1as5bvsd",
+      "phone": "8551939455",
       "password": "neosao@123"
   }
 }
