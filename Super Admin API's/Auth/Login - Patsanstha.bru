@@ -5,9 +5,13 @@ meta {
 }
 
 post {
-  url: {{superadminapi-test}}/login
+  url: {{liveSuperAdmin}}/login
   body: multipartForm
   auth: inherit
+}
+
+headers {
+  lang: mr
 }
 
 body:multipart-form {
