@@ -5,21 +5,21 @@ meta {
 }
 
 get {
-  url: {{adminapi-test}}/whatsapp-templates?search&limit=10&page=1&message_mode&type=member
+  url: {{liveAdmin}}/whatsapp-templates?search&limit=50&page=1&message_mode=direct&type=member
   body: none
   auth: bearer
 }
 
 params:query {
   search: 
-  limit: 10
+  limit: 50
   page: 1
-  message_mode: 
+  message_mode: direct
   type: member
 }
 
 auth:bearer {
-  token: {{token}}
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FkbWluLnNhaGthcm1pdHJhLmNvbS9tb25hMWFzNWJ2c2QvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzYxMzc2MDY3LCJleHAiOjE3NjM5NjgwNjcsIm5iZiI6MTc2MTM3NjA2NywianRpIjoiQjVPUGY2OEJFbHk2TjI2dyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.IY-8h3jqzATHgS2aefNbaAd7dqg33-KBV603ivT2Ya4
 }
 
 settings {

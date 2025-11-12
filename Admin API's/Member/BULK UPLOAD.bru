@@ -5,9 +5,13 @@ meta {
 }
 
 post {
-  url: {{adminapi-test}}/members/import
+  url: {{liveAdmin}}/members/import
   body: multipartForm
   auth: bearer
+}
+
+headers {
+  lang: mr
 }
 
 auth:bearer {
@@ -15,7 +19,8 @@ auth:bearer {
 }
 
 body:multipart-form {
-  file: @file(C:\Users\Neosao\Downloads\members_import_template (6).csv)
+  file: @file(C:\Users\Neosao\Desktop\test-1.xlsx)
+  patsanstha_id: 1eaf8409-b3aa-4128-b150-c7ae63b3a2f1
 }
 
 settings {

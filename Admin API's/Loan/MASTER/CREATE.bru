@@ -5,9 +5,13 @@ meta {
 }
 
 post {
-  url: {{adminapi-test}}/loan
+  url: {{liveAdmin}}/loan
   body: json
   auth: bearer
+}
+
+headers {
+  lang: mr
 }
 
 auth:bearer {
@@ -24,7 +28,7 @@ body:json {
       "loan_type": 1,
       "loan_amount": 97000,
       "loan_provided_date": "10-02-2025",
-      "duration_in_month": 1,
+      "duration_in_month": 3,
       "day": "monday",
       "refund_type": "quarterly",
       "loan_account_number": "160010005707",
