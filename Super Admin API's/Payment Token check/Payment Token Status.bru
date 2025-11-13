@@ -1,33 +1,23 @@
 meta {
-  name: Create
+  name: Payment Token Status
   type: http
-  seq: 2
+  seq: 1
 }
 
 post {
-  url: {{liveSuperAdmin}}/topup/create
-  body: multipartForm
+  url: {{liveSuperAdmin}}/payment/token/status
+  body: json
   auth: bearer
-}
-
-headers {
-  : 
 }
 
 auth:bearer {
   token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FkbWluLnNhaGthcm1pdHJhLmNvbS9tb25hMWFzNWJ2c2QvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzYyOTUxNTM1LCJleHAiOjE3NjU1NDM1MzUsIm5iZiI6MTc2Mjk1MTUzNSwianRpIjoiQU9wZjMxN2xqWXJFdHY5WiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.S1fYmgslvfw6CnEzaovcKevqPcjMXcYLMhcxYOyUKjk
 }
 
-body:multipart-form {
-  patsanstha_id: 1eaf8409-b3aa-4128-b150-c7ae63b3a2f1
-  patsanstha_code: mona1as5bvsd
-  topup_id: 2
-  title: Top up with 300
-  type: whatsapp
-  price: 200.00
-  quantity: 100
-  phone: 7875537702
-  email: seema@gmail.com
+body:json {
+  {
+    "token":"sb_pt_ee69146539b4F6A"
+  }
 }
 
 settings {
