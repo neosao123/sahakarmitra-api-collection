@@ -5,13 +5,17 @@ meta {
 }
 
 delete {
-  url: {{adminapi-test}}/groups/4
+  url: {{liveAdmin}}/groups/4
   body: none
   auth: bearer
 }
 
+headers {
+  lang: en
+}
+
 auth:bearer {
-  token: {{token}}
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FkbWluLnNhaGthcm1pdHJhLmNvbS9wYXRzbWdnZTY3eW55eXcyci9hcGkvdjEvbG9naW4iLCJpYXQiOjE3NjMwMzAxNDIsImV4cCI6MTc2NTYyMjE0MiwibmJmIjoxNzYzMDMwMTQyLCJqdGkiOiJMc3NpWk8yQjB4d2JLTTFTIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.ZUpcWF-FHJMZjvFpMEfwFlBoqkRnN6a2tquiEIPEayw
 }
 
 settings {

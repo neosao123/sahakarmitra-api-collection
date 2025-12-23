@@ -1,0 +1,24 @@
+meta {
+  name: Contact Us copy
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{liveSuperAdmin}}/contactus
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "full_name":"seema shelar",
+    "email":"seemashelar01@gmail.com",
+    "mobile_number":"7875537702",
+    "message":"this is test email"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

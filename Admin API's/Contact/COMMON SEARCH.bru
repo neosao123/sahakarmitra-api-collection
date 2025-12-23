@@ -5,19 +5,19 @@ meta {
 }
 
 get {
-  url: {{adminapi-test}}/contacts/search-contacts?limit=10&page=1
+  url: {{liveAdmin}}/contacts/search-contacts?limit=200&page=1
   body: none
   auth: bearer
 }
 
 params:query {
-  limit: 10
+  limit: 200
   page: 1
-  ~search: swa
+  ~search: 
 }
 
 auth:bearer {
-  token: {{token}}
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FkbWluLnNhaGthcm1pdHJhLmNvbS9tb25hMWFzNWJ2c2QvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzYzMDM5NjY2LCJleHAiOjE3NjU2MzE2NjYsIm5iZiI6MTc2MzAzOTY2NiwianRpIjoiQnZJMzR0dGo2WUd2a2FwViIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.-HtiH-DhXViU9CpzYRD-3sH6Ou9A2ckzzb48qKjfYWo
 }
 
 script:post-response {
